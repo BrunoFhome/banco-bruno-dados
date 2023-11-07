@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>LISTA DE EXERCICIOS BANCO DE DADOS BRUNO THOME</h1>
+    <br>
+    <h2>EXERCICIO 1.</h2>
+    <p>SELECT * 
+        FROM `basedosdados.br_tse_eleicoes.candidatos` bdc
+        WHERE sigla_uf = "PR"
+        LIMIT 100
+    <br>
+    <img src="assets/ex1.png" alt="" width="300px">
+    <br>
+    <br>
+    <h2>EXERCICIO 2.</h2>
+    <p>SELECT * 
+        FROM `basedosdados.br_tse_eleicoes.candidatos` bdc
+        WHERE sigla_partido = "PT"
+        LIMIT 100</p>
+    <br>
+    <img src="assets/ex2.png" alt="" width="300px">
+    <br>
+    <br>
+
+    <h2>EXERCICIO 3.</h2>
+    <p>SELECT * 
+        FROM `basedosdados.br_tse_eleicoes.candidatos` bdc
+        WHERE cargo = "deputado federal"
+        LIMIT 100
+    <br>
+    <img src="assets/ex3.png" alt="" width="300px">
+    <br>
+    <br>
+
+    <h2>EXERCICIO 4.</h2>
+    <p>SELECT * 
+        FROM `basedosdados.br_tse_eleicoes.candidatos` bdc
+        WHERE idade is not null
+        ORDER BY idade
+        LIMIT 1000</p>
+    <br>
+    <img src="assets/ex4.png" alt="" width="300px">
+    <br>
+    <br>
+
+    <h2>EXERCICIO 5.</h2>
+    <p>SELECT * 
+        FROM `basedosdados.br_tse_eleicoes.candidatos` bdc
+        WHERE idade is not null
+        ORDER BY idade DESC
+        LIMIT 1000</p>
+    <br>
+    <img src="assets/ex5.png" alt="" width="300px">
+    <br>
+    <br>
+
+    <h2>EXERCICIO 6.</h2>
+    <p>SELECT * 
+        FROM `basedosdados.br_tse_eleicoes.candidatos` bdc
+        WHERE instrucao = "ensino superior completo"
+        LIMIT 100</p>
+    <br>
+    <img src="assets/ex6.png" alt="" width="300px">
+    <br>
+    <br>
+    <h2>EXERCICIO 7.</h2>
+    <p>SELECT AVG(idade)
+        FROM `basedosdados.br_tse_eleicoes.candidatos` bdc
+        WHERE sigla_uf = "RJ"
+        LIMIT 100</p>
+    <br>
+    <img src="assets/ex7.png" alt="" width="300px">
+    <br>
+    <br>
+
+    <h2>EXERCICIO 8.</h2>
+    <p>SELECT COUNT(*) AS numero_de_candidatos
+        FROM basedosdados.br_tse_eleicoes.candidatos
+        WHERE cargo = 'senador'
+        LIMIT 100</p>
+    <br>
+    <img src="assets/ex8.png" alt="" width="300px">
+    <br>
+    <br>
+
+    <h2>EXERCICIO 9.</h2>
+    <p>SELECT *
+        FROM basedosdados.br_tse_eleicoes.candidatos
+        WHERE sigla_partido = "PMDB" AND sigla_uf = 'PR'
+        LIMIT 100</p>
+    <br>
+    <img src="assets/ex9.png" alt="" width="300px">
+    <br>
+    <br>
+
+    <h2>EXERCICIO 10.</h2>
+    <p>SELECT *
+        FROM basedosdados.br_tse_eleicoes.candidatos
+        WHERE cargo = 'senador' AND sigla_uf = 'PR'
+        LIMIT 100</p>
+    <br>
+    <img src="assets/ex10.png" alt="" width="300px">
+    <br>
+    <br>
+
+    <h2>EXERCICIO 11.</h2>
+    <p>SELECT estado_civil, COUNT(*) AS quantidade_de_candidatos
+        FROM basedosdados.br_tse_eleicoes.candidatos
+        GROUP BY estado_civil
+        LIMIT 100</p>
+    <br>
+    <img src="assets/ex11.png" alt="" width="300px">
+    <br>
+    <br>
+
+    <h2>EXERCICIO 12.</h2>
+    <p>SELECT sigla_partido, AVG(idade) AS idade_media
+        FROM basedosdados.br_tse_eleicoes.candidatos
+        GROUP BY sigla_partido
+        LIMIT 100</p>
+    <br>
+    <img src="assets/ex12.png" alt="" width="300px">
+    <br>
+    <br>
+
+    <h2>EXERCICIO 13.</h2>
+    <p>SELECT *
+        FROM basedosdados.br_tse_eleicoes.candidatos
+        WHERE email IS NOT NULL
+        LIMIT 100</p>
+    <br>
+    <img src="assets/ex13.png" alt="" width="300px">
+    <br>
+    <br>
+
+    <h2>EXERCICIO 14.</h2>
+    <p>SELECT *
+        FROM basedosdados.br_tse_eleicoes.bens_candidato
+        WHERE sigla_uf = 'SP'
+        limit 100</p>
+    <br>
+    <img src="assets/ex14.png" alt="" width="300px">
+    <br>
+    <br>
+
+
+    <h2>EXERCICIO 15.</h2>
+    <p>SELECT id_candidato_bd, SUM(valor_item) AS soma_valores
+        FROM `basedosdados.br_tse_eleicoes.bens_candidato`
+        GROUP BY id_candidato_bd
+        LIMIT 100</p>
+    <br>
+    <img src="assets/ex15.png" alt="" width="300px">
+    <br>
+    <br>
+
+    <h2>EXERCICIO 16.</h2>
+    <p>SELECT descricao_item, ano
+        FROM basedosdados.br_tse_eleicoes.bens_candidato
+        WHERE ano = 2022
+        limit 100</p>
+    <br>
+    <img src="assets/ex16.png" alt="" width="300px">
+    <br>
+    <br>
+
+    <h2>EXERCICIO 17.</h2>
+    <p>SELECT tipo_item, id_candidato_bd
+        FROM basedosdados.br_tse_eleicoes.bens_candidato
+        WHERE tipo_item = "Casa" OR tipo_item = "Apartamento"
+        limit 100</p>
+    <br>
+    <img src="assets/ex17.png" alt="" width="300px">
+    <br>
+    <br>
+
+    <h2>EXERCICIO 18.</h2>
+    <p>SELECT AVG(valor_item) AS valor_medio_bens
+        FROM `basedosdados.br_tse_eleicoes.bens_candidato`
+        WHERE id_candidato_bd IN (SELECT id_candidato_bd FROM basedosdados.br_tse_eleicoes.candidatos WHERE numero_partido = '15')
+        LIMIT 100</p>
+    <br>
+    <img src="assets/ex18.png" alt="" width="300px">
+    <br>
+    <br>
+
+    <h2>EXERCICIO 19.</h2>
+    <p>SELECT *
+        FROM `basedosdados.br_tse_eleicoes.bens_candidato`
+        ORDER BY valor_item DESC
+        LIMIT 10;
+    </p>
+    <br>
+    <img src="assets/ex19.png" alt="" width="300px">
+    <br>
+    <br>
+
+    <h2>EXERCICIO 20.</h2>
+    <p>SELECT *
+        FROM basedosdados.br_tse_eleicoes.bens_candidato
+        WHERE tipo_item LIKE '%Casa%';</p>
+    <br>
+    <img src="assets/ex20.png" alt="" width="300px">
+    <br>
+    <br>
+
+    <h2>EXERCICIO 21.</h2>
+    <p>SELECT tipo_eleicao, SUM(valor_item) AS soma_total_bens
+        FROM basedosdados.br_tse_eleicoes.bens_candidato
+        GROUP BY tipo_eleicao
+        LIMIT 100
+        </p>
+    <br>
+    <img src="assets/ex21.png" alt="" width="300px">
+    <br>
+    <br>
+
+    <h2>EXERCICIO 22.</h2>
+    <p>SELECT *
+        FROM basedosdados.br_tse_eleicoes.bens_candidato
+        WHERE valor_item > 1000000
+        LIMIT 100</p>
+    <br>
+    <img src="assets/ex22.png" alt="" width="300px">
+    <br>
+    <br>
+
+    <h2>EXERCICIO 23.</h2>
+    <p>SELECT *
+        FROM basedosdados.br_tse_eleicoes.bens_candidato
+        WHERE valor_item = (SELECT MAX(valor_item) FROM basedosdados.br_tse_eleicoes.bens_candidato)
+        LIMIT 100</p>
+    <br>
+    <img src="assets/ex23.png" alt="" width="300px">
+    <br>
+    <br>
+
+    <h2>EXERCICIO 24.</h2>
+    <p>SELECT sigla_uf, SUM(valor_item) AS soma_total_bens
+        FROM basedosdados.br_tse_eleicoes.bens_candidato
+        GROUP BY sigla_uf
+        LIMIT 100</p>
+    <br>
+    <img src="assets/ex24.png" alt="" width="300px">
+    <br>
+    <br>
+
+    <h2>EXERCICIO 25.</h2>
+    <p>SELECT
+        c.id_candidato_bd,
+        c.sigla_uf,
+        bc.descricao_item,
+        bc.valor_item
+    FROM basedosdados.br_tse_eleicoes.candidatos AS c
+    JOIN basedosdados.br_tse_eleicoes.bens_candidato AS bc ON c.id_candidato_bd = bc.id_candidato_bd
+    WHERE bc.valor_item = (SELECT MAX(valor_item) FROM basedosdados.br_tse_eleicoes.bens_candidato WHERE ano = 2022)
+    AND c.ano = 2022
+    LIMIT 100</p>
+    <br>
+    <img src="assets/ex25.png" alt="" width="300px">
+    <br>
+    <br>
+
+    <h2>EXERCICIO 26.</h2>
+    <p>SELECT *
+        FROM basedosdados.br_tse_eleicoes.bens_candidato
+        WHERE descricao_item LIKE '%Veículo%' AND sigla_uf = 'MG'
+        LIMIT 100</p>
+    <br>
+    <img src="assets/ex26.png" alt="" width="300px">
+    <br>
+    <br>
+
+
+    
+</body>
+</html>
